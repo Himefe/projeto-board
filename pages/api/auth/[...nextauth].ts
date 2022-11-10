@@ -32,10 +32,6 @@ export const authOptions: NextAuthOptions = {
           image: string;
         };
 
-      const hasTheUser = await api_user.verifyUserExist(session.user.id);
-
-      if (!hasTheUser) await api_user.saveLoggedUser(session.user as UserParam);
-
       return session;
     },
   },
