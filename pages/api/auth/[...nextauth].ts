@@ -17,22 +17,19 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }) {
       if (user) {
         token.user = user;
+
+        api_user.saveLoggedUser(user as UserParam);
       }
       return token;
     },
     async session({ session, token }) {
-      if (token) {
+      if (token)
         session.user = token.user as {
           id: string;
           name: string;
           email?: string;
           image: string;
         };
-
-        const hasTheUser = await api_user.verifyUserExist(session.user.id);
-        if (!hasTheUser)
-          await api_user.saveLoggedUser(session.user as UserParam);
-      }
 
       return session;
     },
