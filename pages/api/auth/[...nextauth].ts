@@ -17,9 +17,6 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }) {
       if (user) {
         token.user = user;
-        const hasTheUser = await api_user.verifyUserExist(user.id);
-
-        if (!hasTheUser) await api_user.saveLoggedUser(user as UserParam);
       }
       return token;
     },
