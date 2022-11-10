@@ -17,9 +17,9 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }) {
       if (user) {
         token.user = user;
-        const hasTheUser = api_user.verifyUserExist(user.id);
+        const hasTheUser = await api_user.verifyUserExist(user.id);
 
-        if (!hasTheUser) api_user.saveLoggedUser(user as UserParam);
+        if (!hasTheUser) await api_user.saveLoggedUser(user as UserParam);
       }
       return token;
     },
@@ -31,6 +31,10 @@ export const authOptions: NextAuthOptions = {
           email?: string;
           image: string;
         };
+
+      const hasTheUser = await api_user.verifyUserExist(session.user.id);
+
+      if (!hasTheUser) await api_user.saveLoggedUser(session.user as UserParam);
 
       return session;
     },
