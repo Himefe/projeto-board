@@ -1,12 +1,7 @@
-import type { GetServerSideProps, NextPage } from "next";
-import { unstable_getServerSession } from "next-auth";
-import { useSession } from "next-auth/react";
 import Head from "next/head";
 import Image from "next/image";
-import { api_user } from "../libs/api/user";
+
 import styles from "../styles/Home.module.css";
-import { UserParam } from "../Types/User/user";
-import { authOptions } from "./api/auth/[...nextauth]";
 
 const Home = () => {
   return (
@@ -71,25 +66,6 @@ const Home = () => {
       </main>
     </div>
   );
-};
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const session = await unstable_getServerSession(
-    context.req,
-    context.res,
-    authOptions
-  );
-
-  if (session?.user) {
-    const hasTheUser = await api_user.verifyUserExist(session.user.id);
-    if (!hasTheUser) await api_user.saveLoggedUser(session.user as UserParam);
-  }
-
-  return {
-    props: {
-      user: session?.user || null,
-    },
-  };
 };
 
 export default Home;
