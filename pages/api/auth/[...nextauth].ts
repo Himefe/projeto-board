@@ -21,7 +21,7 @@ export const authOptions: NextAuthOptions = {
       return token;
     },
     async session({ session, token }) {
-      if (token)
+      if (token) {
         session.user = token.user as {
           id: string;
           name: string;
@@ -29,15 +29,12 @@ export const authOptions: NextAuthOptions = {
           image: string;
         };
 
-      return session;
-    },
-    async signIn(params) {
-      if (true) {
-        const hasTheUser = await api_user.verifyUserExist(params.user.id);
+        const hasTheUser = await api_user.verifyUserExist(session.user.id);
         if (!hasTheUser)
-          await api_user.saveLoggedUser(params.user as UserParam);
-        return true;
+          await api_user.saveLoggedUser(session.user as UserParam);
       }
+
+      return session;
     },
   },
 };
