@@ -104,7 +104,9 @@ const Header = () => {
                           src={session.user.image as string}
                           style={{ borderRadius: 50 }}
                         />
-                        <span>{session.user.name}</span>
+                        <span style={{ marginLeft: 10 }}>
+                          {session.user.name}
+                        </span>
                         <Image
                           width={25}
                           height={25}

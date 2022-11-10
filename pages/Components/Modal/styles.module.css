@@ -30,6 +30,7 @@
 
 .modal_title span {
   display: inline-block;
+  font-size: 1.35rem;
 }
 
 .modal_title span::after {
