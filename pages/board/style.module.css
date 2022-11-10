@@ -1,0 +1,179 @@
+.container {
+  margin: 90px auto 90px auto;
+  width: 70%;
+}
+
+.input_area {
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  display: block;
+  width: 100%;
+  background-color: #17181f;
+  padding: 45px;
+  border-radius: 6px;
+}
+
+.input_content {
+  display: block;
+  width: 100%;
+  background-color: #20212c;
+  border: 1px solid #424242;
+  border-radius: 14px;
+}
+
+.input_content input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 18px 20px;
+  color: #fff;
+  width: 100%;
+}
+
+.input_area input::placeholder {
+  color: #fff;
+}
+
+.adicionar_button {
+  background-color: #ffb800;
+  height: 100%;
+  display: block;
+  width: 94px;
+  height: 60px;
+  margin-left: 15px;
+  border-radius: 14px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 2.93rem;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.adicionar_button:hover {
+  transform: scale(0.95);
+}
+
+.tasks_container {
+  margin: 10px 0;
+  max-height: 26.25rem;
+  overflow-y: auto;
+}
+
+.tasks_container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.tasks_container::-webkit-scrollbar-track {
+  background-color: #20212c;
+  border-radius: 20px;
+}
+
+.tasks_container::-webkit-scrollbar-thumb {
+  background-color: #17181f;
+  border: 3px solid #20212c;
+  border-radius: 20px;
+}
+
+.tasks_content {
+  background-color: #20212c;
+  padding: 20px 25px;
+  border-radius: 14px;
+  color: #fff;
+  margin-top: 30px;
+  margin-right: 10px;
+}
+
+.task_title {
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.465rem;
+  margin-bottom: 15px;
+}
+
+.date {
+  font-size: 1.0625rem;
+  font-weight: 400;
+
+  color: #ffb800;
+  display: flex;
+  align-items: center;
+}
+
+.date p {
+  margin-left: 10px;
+}
+
+.date_edit_delete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.0625rem;
+}
+
+.date_edit_container {
+  display: flex;
+  align-items: center;
+}
+
+.edit {
+  font-size: 1.0625rem;
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.edit p {
+  margin-left: 10px;
+}
+
+.delete_content {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.delete_content p {
+  margin-left: 10px;
+}
+
+.not_tasks {
+  color: #424242;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin-top: 30px;
+  font-size: 1.255rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .container {
+    width: 85%;
+  }
+
+  .content {
+    padding: 25px;
+  }
+
+  .mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .date_edit_container {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .mobile .edit {
+    margin: 0;
+  }
+}

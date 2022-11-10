@@ -1,0 +1,118 @@
+.header {
+  background: #141a29;
+}
+
+.container {
+  max-width: 70%;
+  margin: 0 auto;
+  height: 95px;
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image_area {
+  width: 80px;
+  height: 79px;
+}
+
+.image_area .img_logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav_links {
+  margin-left: 60px;
+}
+
+.nav_links ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav_links ul li {
+  font-size: 1.5625rem;
+  margin-right: 35px;
+  line-height: 2.34375rem;
+  text-align: center;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+  color: #fff;
+}
+
+.nav_links ul li:hover {
+  color: #ffb800;
+}
+
+.left_area {
+  display: flex;
+  align-items: center;
+}
+
+.right_area {
+  display: flex;
+  align-items: center;
+}
+
+.login_github_area .login_github {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease-in-out;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  color: #fff;
+  /* cursor: pointer; */
+}
+
+.login_github span {
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.login_github_area .login_github span:hover {
+  color: #ffb800;
+}
+
+.login_github_area .login_github img {
+  margin-right: 15px;
+}
+
+.login_github .login_github img:last-child:hover {
+  fill: #ffb800;
+}
+
+@media only screen and (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+  }
+
+  .menu_mobile_area {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav_links {
+    margin: 20px 0;
+    flex-direction: column;
+  }
+
+  .nav_links ul {
+    flex-direction: column;
+  }
+
+  .nav_links ul li,
+  .nav_links ul li a {
+    /* font-size: 1.6rem; */
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .login_github_area .login_github {
+    /* font-size: 1.45rem; */
+  }
+}

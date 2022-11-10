@@ -1,0 +1,128 @@
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.modal_content {
+  background-color: #17181f;
+  border: 2px solid #20212c;
+  width: 30vw;
+  color: white;
+  height: fit-content;
+  padding: 20px 30px;
+  margin-top: 25vh;
+  border-radius: 14px;
+  animation: anime 0.3s ease-in-out forwards;
+}
+
+.modal_title {
+  margin-bottom: 20px;
+  font-size: 1.125rem;
+}
+
+.modal_title span {
+  display: inline-block;
+}
+
+.modal_title span::after {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 3px;
+  background-color: #424242;
+  border-radius: 2px;
+}
+
+.modal_inputArea {
+  display: block;
+  width: 100%;
+  background-color: #20212c;
+  border-radius: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal_inputArea input {
+  background-color: transparent;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  display: block;
+  width: 100%;
+}
+
+.modal_inputArea input::placeholder {
+  color: #fff;
+}
+
+.preview_area {
+  margin-top: 30px;
+}
+
+.preview_content {
+  background-color: #20212c;
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+
+.preview_title {
+  margin-bottom: 5px;
+}
+
+.preview_date {
+  color: #ffb800;
+}
+
+.preview_content_title {
+  margin-bottom: 5px;
+}
+
+.button_area {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.button_area .button {
+  width: 100px;
+  padding: 7px 0;
+  color: #fff;
+  background-color: #d42d2d;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.button_area .button:last-child {
+  background-color: #20212c;
+  margin-left: 10px;
+}
+
+.button_area .button:last-child:disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+
+@keyframes anime {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .modal_content {
+    width: 80vw;
+  }
+}
