@@ -67,6 +67,11 @@
   /* cursor: pointer; */
 }
 
+.user_photo {
+  display: inline-flex;
+  margin-right: 10px;
+}
+
 .login_github span {
   transition: color 0.3s ease-in-out;
   cursor: pointer;
@@ -110,9 +115,5 @@
     /* font-size: 1.6rem; */
     margin-right: 0;
     margin-bottom: 10px;
-  }
-
-  .login_github_area .login_github {
-    /* font-size: 1.45rem; */
   }
 }

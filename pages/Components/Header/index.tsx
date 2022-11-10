@@ -41,13 +41,15 @@ const Header = () => {
             <div className={styles.login_github_area}>
               {session?.user ? (
                 <div className={styles.login_github} tabIndex={0}>
-                  <Image
-                    width={32.5}
-                    height={35.04}
-                    alt="Logo Github"
-                    src={session.user.image as string}
-                    style={{ borderRadius: 50 }}
-                  />
+                  <div className={styles.user_photo}>
+                    <Image
+                      width={32.5}
+                      height={35.04}
+                      alt="Logo Github"
+                      src={session.user.image as string}
+                      style={{ borderRadius: 50 }}
+                    />
+                  </div>
                   <span>{session.user.name}</span>
                   <Image
                     width={25}
