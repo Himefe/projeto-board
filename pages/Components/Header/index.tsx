@@ -77,7 +77,7 @@ const Header = () => {
                     alt="Logo Github"
                     src="/github-icon.svg"
                   />
-                  <span>Entrar com github</span>
+                  <span style={{ marginLeft: 10 }}>Entrar com github</span>
                 </div>
               )}
             </div>
